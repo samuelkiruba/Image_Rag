@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Question Answering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Question Answering</h1>
+        <div class="content">
+            <!-- Left Section: Display Uploaded Image -->
+            <div class="image-section">
+                <img id="uploadedImage" src="" alt="Uploaded Image">
+                <p id="imagePlaceholder">Upload an image to display here.</p>
+            </div>
+
+            <!-- Right Section: Upload and Interaction -->
+            <div class="interaction-section">
+                <form id="uploadForm">
+                    <input type="file" id="fileInput" name="file" accept="image/*" required>
+                    <input type="text" id="questionInput" name="question" placeholder="Ask a question about the image..." required>
+                    <button type="submit">Upload and Ask</button>
+                </form>
+                <div id="response"></div>
+            </div>
+        </div>
+
+        <!-- Feedback Section at the Bottom -->
+        <div class="feedback-section">
+            <p>Was this helpful? <a href="/feedback">Provide feedback</a></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
